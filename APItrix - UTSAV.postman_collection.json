@@ -1,0 +1,536 @@
+{
+	"info": {
+		"_postman_id": "b6733bec-347a-4116-9a78-684c619d3818",
+		"name": "APItrix - UTSAV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30887664"
+	},
+	"item": [
+		{
+			"name": "CREATE DATA",
+			"item": [
+				{
+					"name": "Create Satellites",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200 OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Success message is True\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"true\");\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"satellites\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"Hubble Space Telescope\",\r\n            \"latitude\": 37.6886,\r\n            \"longitude\": -122.4325,\r\n            \"altitude_km\": 559,\r\n            \"status\": \"active\",\r\n            \"country\": \"United States\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"International Space Station\",\r\n            \"latitude\": 51.633,\r\n            \"longitude\": -0.167,\r\n            \"altitude_km\": 420,\r\n            \"status\": \"active\",\r\n            \"country\": \"International\"\r\n        },\r\n        {\r\n            \"id\": 3,\r\n            \"name\": \"Juno\",\r\n            \"latitude\": 35.0,\r\n            \"longitude\": -71.0,\r\n            \"altitude_km\": 245,\r\n            \"status\": \"active\",\r\n            \"country\": \"United States\"\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"name\": \"Mars Reconnaissance Orbiter\",\r\n            \"latitude\": -84.0,\r\n            \"longitude\": 189.0,\r\n            \"altitude_km\": 300,\r\n            \"status\": \"active\",\r\n            \"country\": \"United States\"\r\n        },\r\n        {\r\n            \"id\": 5,\r\n            \"name\": \"Astra\",\r\n            \"latitude\": 30.0,\r\n            \"longitude\": -25.0,\r\n            \"altitude_km\": 500,\r\n            \"status\": \"active\",\r\n            \"country\": \"France\"\r\n        },\r\n        {\r\n            \"id\": 6,\r\n            \"name\": \"Galileo\",\r\n            \"latitude\": 25.0,\r\n            \"longitude\": 10.0,\r\n            \"altitude_km\": 380,\r\n            \"status\": \"inactive\",\r\n            \"country\": \"Italy\"\r\n        },\r\n        {\r\n            \"id\": 7,\r\n            \"name\": \"Voyager 1\",\r\n            \"latitude\": -19.0,\r\n            \"longitude\": 157.0,\r\n            \"altitude_km\": 250,\r\n            \"status\": \"active\",\r\n            \"country\": \"United States\"\r\n        },\r\n        {\r\n            \"id\": 8,\r\n            \"name\": \"Venus Express\",\r\n            \"latitude\": 0.0,\r\n            \"longitude\": 90.0,\r\n            \"altitude_km\": 470,\r\n            \"status\": \"active\",\r\n            \"country\": \"European Space Agency\"\r\n        },\r\n        {\r\n            \"id\": 9,\r\n            \"name\": \"Kepler\",\r\n            \"latitude\": 45.0,\r\n            \"longitude\": -60.0,\r\n            \"altitude_km\": 410,\r\n            \"status\": \"active\",\r\n            \"country\": \"United States\"\r\n        },\r\n        {\r\n            \"id\": 10,\r\n            \"name\": \"Cassini\",\r\n            \"latitude\": -75.0,\r\n            \"longitude\": -20.0,\r\n            \"altitude_km\": 300,\r\n            \"status\": \"inactive\",\r\n            \"country\": \"United States\"\r\n        },\r\n        {\r\n            \"id\": 11,\r\n            \"name\": \"New Horizons\",\r\n            \"latitude\": 12.0,\r\n            \"longitude\": 100.0,\r\n            \"altitude_km\": 390,\r\n            \"status\": \"active\",\r\n            \"country\": \"United States\"\r\n        },\r\n        {\r\n            \"id\": 12,\r\n            \"name\": \"Chandra X-ray Observatory\",\r\n            \"latitude\": -15.0,\r\n            \"longitude\": -165.0,\r\n            \"altitude_km\": 460,\r\n            \"status\": \"active\",\r\n            \"country\": \"United States\"\r\n        }\r\n    ]\r\n}"
+						},
+						"url": "http://{{machine_ip}}:{{port}}/app/create/satellites"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Ground Stations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200 OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Success message is True\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"true\");\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ground_stations\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"Goldstone Deep Space Communications Complex\",\r\n            \"latitude\": 35.4176,\r\n            \"longitude\": -116.8900,\r\n            \"status\": \"operational\",\r\n            \"country\": \"United States\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"European Space Operations Centre\",\r\n            \"latitude\": 50.0055,\r\n            \"longitude\": 8.4325,\r\n            \"status\": \"operational\",\r\n            \"country\": \"Germany\"\r\n        },\r\n        {\r\n            \"id\": 3,\r\n            \"name\": \"Indian Deep Space Network\",\r\n            \"latitude\": 19.0733,\r\n            \"longitude\": 72.8996,\r\n            \"status\": \"operational\",\r\n            \"country\": \"India\"\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"name\": \"Goonhilly Earth Station\",\r\n            \"latitude\": 50.0,\r\n            \"longitude\": -5.0,\r\n            \"status\": \"operational\",\r\n            \"country\": \"United Kingdom\"\r\n        },\r\n        {\r\n            \"id\": 5,\r\n            \"name\": \"Canberra Deep Space Communication Complex\",\r\n            \"latitude\": -35.4000,\r\n            \"longitude\": 148.9800,\r\n            \"status\": \"operational\",\r\n            \"country\": \"Australia\"\r\n        },\r\n        {\r\n            \"id\": 6,\r\n            \"name\": \"Usuda Deep Space Center\",\r\n            \"latitude\": 36.0,\r\n            \"longitude\": 138.0,\r\n            \"status\": \"operational\",\r\n            \"country\": \"Japan\"\r\n        },\r\n        {\r\n            \"id\": 7,\r\n            \"name\": \"Bear Lake Observatory\",\r\n            \"latitude\": 41.0,\r\n            \"longitude\": -111.0,\r\n            \"status\": \"under maintenance\",\r\n            \"country\": \"United States\"\r\n        },\r\n        {\r\n            \"id\": 8,\r\n            \"name\": \"Yebes Observatory\",\r\n            \"latitude\": 40.0,\r\n            \"longitude\": -3.0,\r\n            \"status\": \"operational\",\r\n            \"country\": \"Spain\"\r\n        },\r\n        {\r\n            \"id\": 9,\r\n            \"name\": \"Kalyazin Radio Astronomy Observatory\",\r\n            \"latitude\": 57.0,\r\n            \"longitude\": 37.0,\r\n            \"status\": \"operational\",\r\n            \"country\": \"Russia\"\r\n        },\r\n        {\r\n            \"id\": 10,\r\n            \"name\": \"Warkworth Radio Astronomical Observatory\",\r\n            \"latitude\": -36.0,\r\n            \"longitude\": 174.0,\r\n            \"status\": \"operational\",\r\n            \"country\": \"New Zealand\"\r\n        },\r\n        {\r\n            \"id\": 11,\r\n            \"name\": \"Yebes Observatory\",\r\n            \"latitude\": 40.0,\r\n            \"longitude\": -3.0,\r\n            \"status\": \"operational\",\r\n            \"country\": \"Spain\"\r\n        },\r\n        {\r\n            \"id\": 12,\r\n            \"name\": \"Metsähovi Radio Observatory\",\r\n            \"latitude\": 60.0,\r\n            \"longitude\": 24.0,\r\n            \"status\": \"operational\",\r\n            \"country\": \"Finland\"\r\n        }\r\n    ]\r\n}"
+						},
+						"url": "http://{{machine_ip}}:{{port}}/app/create/groundst"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET DATA",
+			"item": [
+				{
+					"name": "Get ground stations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200 OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check length is 12 OK\", function () {\r",
+									"    // console.log(pm.response.json())\r",
+									"    pm.expect(pm.response.json().ground_stations.length).to.equals(12);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Success message is True\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"true\");\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://{{machine_ip}}:{{port}}/app/get/groundst"
+					},
+					"response": []
+				},
+				{
+					"name": "Get satellites",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200 OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check length is 12 OK\", function () {\r",
+									"    // console.log(pm.response.json())\r",
+									"    pm.expect(pm.response.json().satellites.length).to.equals(12);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Success message is True\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"true\");\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://{{machine_ip}}:{{port}}/app/get/satellites"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PUT DATA",
+			"item": [
+				{
+					"name": "Update satellites",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200 OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check length is 13 OK\", function () {\r",
+									"    // console.log(pm.response.json())\r",
+									"    pm.expect(pm.response.json().satellites.length).to.equals(13);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Success message is True\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"true\");\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"satellites\": [\r\n        {\r\n            \"id\": 13,\r\n            \"name\": \"Chandrayaan\",\r\n            \"latitude\": 48.415,\r\n            \"longitude\": -129.4194,\r\n            \"altitude_km\": 700,\r\n            \"status\": \"active\",\r\n            \"country\": \"India\"\r\n        }\r\n    ]\r\n}"
+						},
+						"url": "http://{{machine_ip}}:{{port}}/app/update/satellites"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Ground Stations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200 OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check length is 13 OK\", function () {\r",
+									"    // console.log(pm.response.json())\r",
+									"    pm.expect(pm.response.json().ground_stations.length).to.equals(13);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Success message is True\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"true\");\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ground_stations\": [\r\n        {\r\n            \"id\": 13,\r\n            \"name\": \"Bharat\",\r\n            \"latitude\": 45.2341,\r\n            \"longitude\": -108.2437,\r\n            \"status\": \"operational\",\r\n            \"country\": \"India\"\r\n        }\r\n    ]\r\n}"
+						},
+						"url": "http://{{machine_ip}}:{{port}}/app/update/groundst"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DELETE DATA",
+			"item": [
+				{
+					"name": "Delete Satellites by Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200 OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check length is 10 OK\", function () {\r",
+									"    // console.log(pm.response.json())\r",
+									"    pm.expect(pm.response.json().satellites.length).to.equals(10);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Success message is True\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"true\");\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":[3,4,10]\r\n}"
+						},
+						"url": "http://{{machine_ip}}:{{port}}/app/delete/satellites"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Ground Stations by Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200 OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Check length is 10 OK\", function () {\r",
+									"    // console.log(pm.response.json())\r",
+									"    pm.expect(pm.response.json().ground_stations.length).to.equals(10);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Success message is True\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"true\");\r",
+									"})"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":[3,4,10]\r\n}"
+						},
+						"url": "http://{{machine_ip}}:{{port}}/app/delete/groundst"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TASKS",
+			"item": [
+				{
+					"name": "Find new coordinates",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200 OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Success message is True\", function () {\r",
+									"    pm.expect(pm.response.json().success).to.be.true;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Latitude and Longitude within specified range\", function () {\r",
+									"    const response = pm.response.json();\r",
+									"    const latitude = response.satellite.latitude;\r",
+									"    const longitude = response.satellite.longitude;\r",
+									"\r",
+									"    pm.expect(latitude).to.be.within(51.75, 51.76);\r",
+									"    pm.expect(longitude).to.be.within(-0.170, -0.160);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":2\r\n}"
+						},
+						"url": "http://{{machine_ip}}:{{port}}/app/task/nextpos"
+					},
+					"response": []
+				},
+				{
+					"name": "Find nearest ground station",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200 OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Success message is True\", function () {\r",
+									"    pm.expect(pm.response.json().success).to.be.true;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"ID is 2 and Distance within specified range\", function () {\r",
+									"    const response = pm.response.json();\r",
+									"    const id = response.ground_station.id;\r",
+									"    const distance = response.ground_station.distance;\r",
+									"\r",
+									"    pm.expect(id).to.equal(2);\r",
+									"    pm.expect(distance).to.be.within(420.09, 420.1);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":2\r\n}"
+						},
+						"url": "http://{{machine_ip}}:{{port}}/app/task/nearestgs"
+					},
+					"response": []
+				},
+				{
+					"name": "Find closest distance between two satellites",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Response status code is 200 OK\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Success message is True\", function () {\r",
+									"    pm.expect(pm.response.json().success).to.be.true;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"min_distance within specified range\", function () {\r",
+									"    const response = pm.response.json();\r",
+									"    const minDistance = response.min_distance;\r",
+									"\r",
+									"    pm.expect(minDistance).to.be.within(185.64, 185.65);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id1\":1,\r\n    \"id2\":2\r\n}"
+						},
+						"url": "http://{{machine_ip}}:{{port}}/app/task/mindist"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hello World",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200 OK\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains 'success' message\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Hello World\");\r",
+							"    console.log(pm.response.text())\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://{{machine_ip}}:{{port}}/app/"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"var csv = pm.environment.get(\"csv\");",
+					"var currentIP = pm.iterationData.get(\"IP\");",
+					"var currentPort = pm.iterationData.get(\"port\");",
+					"// console.log(currentIP)",
+					"// Set the machine_ip environment variable",
+					"pm.environment.set(\"machine_ip\", \"172.22.62.194\");",
+					"pm.environment.set(\"port\",8000)"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,231 @@
+APItrix
+UTSAV - 2k23
+RULES & REGULATIONS: -
+1. Do not make use of any Database, but data must persist in your
+backend server.
+2. You are free to use resources available over the internet.
+3. You have to develop the backend server and deploy it on
+localhost.
+4. Strictly adhere to the response style for each type of request that
+is described in this document.
+5. You are free to use the backend framework/libraries of your
+choice.
+6. Read this document carefully to understand the problem
+statement and accordingly take actions.
+7. Total time given to you for coding your backend server is 150
+minutes.
+8. All the mathematical numerals to be rounded off to 3 decimal
+places.
+PROBLEM STATEMENT: -
+Scenario: Military Satellite Tracking and Communication API Design
+In this backend API design competition, participants are tasked with
+designing an API for a defense application focused on tracking and
+communicating with military satellites. The goal is to ensure efficient
+communication between ground stations and satellites for defense
+and intelligence purposes.
+For your knowledge:-
+Cartesian distance between two points A(x1,y1,z1) and B(x2,y2,z2) is
+defined as:-
+Cartesian distance = (𝑥1 − 𝑥2)2+ (𝑦1 − 𝑦2)2+ (𝑧1 − 𝑧2)2
+ROUTES IN THE APPLICATION: -
+1.
+ROUTE http://localhost:{{port}}/app/
+METHOD GET
+REQUEST BODY
+RESPONSE BODY {“message”:”hello world”}
+2.
+ROUTE http://localhost:{{port}}/app/create/satellites
+METHOD POST
+REQUEST BODY {
+"satellites": [
+{
+"id": 1,
+"name": "Satellite A",
+"latitude": 37.7749,
+"longitude": -122.4194,
+"altitude_km": 400,
+"status": "active",
+"country": "United States"
+},
+{
+"id": 2,
+"name": "Satellite B",
+"latitude": 40.7128,
+"longitude": -74.006,
+"altitude_km": 450,
+"status": "inactive",
+"country": "United States"
+}
+]
+}
+RESPONSE BODY {“success”:true}
+Satellite object example:
+{
+"id": 2,
+"name": "Satellite C",
+"latitude": 48.415,
+"longitude": -129.4194,
+"altitude_km": 700,
+"status": "active",
+"country": "India"
+}
+3.
+ROUTE http://localhost:{{port}}/app/create/groundst
+METHOD POST
+REQUEST BODY {
+"stations": [
+{
+"id": 1,
+"name": "Ground Station X",
+"latitude": 34.0522,
+"longitude": -118.2437,
+"status": "operational",
+"country": "United States"
+},
+{
+"id": 2,
+"name": "Ground Station Y",
+"latitude": 41.8781,
+"longitude": -87.6298,
+"status": "under maintenance",
+"country": "United States"
+}
+]
+}
+RESPONSE BODY {“success”:true}
+Ground Station object example:
+{
+"id": 1,
+"name": "Ground Station X",
+"latitude": 34.0522,
+"longitude": -118.2437,
+"status": "operational",
+"country": "United States"
+}
+4.
+ROUTE http://localhost:{{port}}/app/get/satellites
+METHOD GET
+REQUEST BODY NA
+RESPONSE BODY {“satellites”:array of satellite
+objects,“success”:true}
+5.
+ROUTE http://localhost:{{port}}/app/get/groundst
+METHOD GET
+REQUEST BODY NA
+RESPONSE BODY {“ground_stations”:array of ground station
+objects,“success”:true}
+6.
+ROUTE http://localhost:{{port}}/app/update/satellites
+METHOD PUT
+REQUEST BODY {
+"satellites": [
+{
+"id": 3,
+"name": "Satellite C",
+"latitude": 48.415,
+"longitude": -129.4194,
+"altitude_km": 700,
+"status": "active",
+"country": "India"
+}
+]
+}
+RESPONSE BODY {“satellites”: updated array of satellite
+objects,“success”:true}
+TASK DESCRIPTION Take the new array sent in the request body,
+concatenate it with the existing array of
+satellites, save and return the same in response
+body.
+7.
+ROUTE http://localhost:{{port}}/app/update/groundst
+METHOD PUT
+REQUEST BODY {
+"ground_stations": [
+{
+"id": 3,
+"name": "Bharat",
+"latitude": 45.2341,
+"longitude": -108.2437,
+"status": "operational",
+"country": "India"
+}
+]
+}
+RESPONSE BODY {“ground_stations”: updated array of ground
+station objects,“success”:true}
+TASK DESCRIPTION Take the new array sent in the request body,
+concatenate it with the existing array of ground
+stations, save and return the same in response
+body.
+8.
+ROUTE http://localhost:{{port}}/app/delete/satellites
+METHOD DELETE
+REQUEST BODY {
+"id":[3]
+}
+RESPONSE BODY {“satellites”: updated array of satellite
+objects,“success”:true}
+TASK DESCRIPTION Take the array of satellites ID array in the
+request body, remove satellites with those IDs in
+the existing array of satellites, save and return
+the same in response body.
+9.
+ROUTE http://localhost:{{port}}/app/delete/groundst
+METHOD DELETE
+REQUEST BODY {
+"id":[3]
+}
+RESPONSE BODY {“ground_stations”: updated array of ground
+station objects,“success”:true}
+TASK DESCRIPTION Take the array of ground stations ID array in the
+request body, remove satellites with those IDs in
+the existing array of satellites, save and return
+the same in response body.
+10.
+ROUTE http://localhost:{{port}}/app/task/nextpos
+METHOD POST
+REQUEST BODY {
+"id":2
+}
+RESPONSE BODY {“satellite”: satellite object with next predicted
+position(longitude, latitude and altitude must
+be updated),“success”:true}
+TASK DESCRIPTION Using the ID in the request body, calculate the
+next position of the satellite using the following
+formula:
+For nextLatitude:
+Likewise calculate all the three attributes
+11.
+ROUTE http://localhost:{{port}}/app/task/nearestgs
+METHOD POST
+REQUEST BODY {
+"id":2
+}
+RESPONSE BODY {
+"ground_station": {
+"name": "Ground Station Y",
+"id": 2,
+"distance": 450.208
+},
+"success": true
+}
+TASK DESCRIPTION For the Satellite corresponding to the id given,
+calculate the nearest ground station.
+12.
+ROUTE http://localhost:{{port}}/app/task/mindist
+METHOD POST
+REQUEST BODY {
+"id1":1,
+"id2":2
+}
+RESPONSE BODY {
+"min_distance": 65.765,
+"success": true
+}
+TASK DESCRIPTION Given two satellite IDs, find the closest distance
+possible between those two satellites in the next
+30 units of time. Consider the formula given
+above(Serial no. 10 TASK DESCRIPTION) to
+calculate the next position, it can be assumed
+that it gives the position of that respective
+satellite in the next 1 unit time.
